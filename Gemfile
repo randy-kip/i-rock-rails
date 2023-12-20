@@ -50,6 +50,8 @@ gem "redcarpet"
 
 gem "devise"
 
+gem "carrierwave"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -82,5 +84,7 @@ group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "shoulda-matchers", require: false
+  gem 'vcr'
+  gem 'webmock'
 end
 
