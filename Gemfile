@@ -54,6 +54,8 @@ gem "carrierwave"
 
 gem "twitter"
 
+gem 'active_model_serializers', '0.10.0.rc2'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
