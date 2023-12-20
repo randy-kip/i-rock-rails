@@ -4,4 +4,3 @@ class Api::AchievementsController < ApiController
       render json: achievements
     end
 end
-  
