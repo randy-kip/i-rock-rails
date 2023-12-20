@@ -48,6 +48,8 @@ gem "simple_form"
 
 gem "redcarpet"
 
+gem "devise"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
