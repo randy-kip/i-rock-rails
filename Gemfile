@@ -52,6 +52,8 @@ gem "devise"
 
 gem "carrierwave"
 
+gem "twitter"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
