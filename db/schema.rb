@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_20_153739) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_20_192708) do
   create_table "achievements", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -21,6 +21,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_20_153739) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_achievements_on_user_id"
+  end
+
+  create_table "encouragements", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "achievement_id", null: false
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_encouragements_on_achievement_id"
+    t.index ["user_id"], name: "index_encouragements_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_20_153739) do
   end
 
   add_foreign_key "achievements", "users"
+  add_foreign_key "encouragements", "achievements"
+  add_foreign_key "encouragements", "users"
 end
