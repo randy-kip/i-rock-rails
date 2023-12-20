@@ -1,20 +1,41 @@
 class AchievementsController < ApplicationController
-    def new
+    
+    def index
+        @achievements = Achievement.public_access
+      end
+    
+      def new
         @achievement = Achievement.new
-    end
-
-    def create
+      end
+    
+      def create
         @achievement = Achievement.new(achievement_params)
         if @achievement.save
-          redirect_to root_url, notice: 'Achievement has been created'
+          redirect_to achievement_url(@achievement), notice: 'Achievement has been created'
         else
           render :new
+        end
+      end
+    
+      def edit
+      end
+    
+      def update
+        if @achievement.update_attributes(achievement_params)
+          redirect_to achievement_path(@achievement)
+        else
+          render :edit
         end
       end
     
       def show
         @achievement = Achievement.find(params[:id])
       end
+    
+      def destroy
+        @achievement.destroy
+        redirect_to achievements_path
+      end  
 
       private
 
