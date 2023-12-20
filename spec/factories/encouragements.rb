@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :encouragement do
-    user nil
-    achievement nil
+    user
+    achievement
     message "MyString"
   end
+
 end
