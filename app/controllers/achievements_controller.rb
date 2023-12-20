@@ -1,5 +1,5 @@
 class AchievementsController < ApplicationController
-    
+
     def index
         @achievements = Achievement.public_access
       end
@@ -18,6 +18,7 @@ class AchievementsController < ApplicationController
       end
     
       def edit
+        @achievement = Achievement.find(params[:id])
       end
     
       def update
