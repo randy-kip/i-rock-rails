@@ -1,5 +1,6 @@
 class Achievement < ApplicationRecord
-    belongs_to :user
+  belongs_to :user
+  has_many :encouragements
 
   validates :title, presence: true
   validates :user, presence: true
@@ -9,8 +10,6 @@ class Achievement < ApplicationRecord
   }
 
   enum privacy: [ :public_access, :private_access, :friends_access ]
-
-  mount_uploader :cover_image, CoverImageUploader
 
   def description_html
     Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(description)
@@ -23,7 +22,4 @@ class Achievement < ApplicationRecord
   def self.by_letter(letter)
     includes(:user).where("title LIKE ?", "#{letter}%").order("users.email")
   end
-
-    def self.get_public_achievements
-    end
 end
