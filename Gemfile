@@ -59,6 +59,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "byebug"
   gem "spring-commands-rspec"
+  gem "spring-commands-cucumber"
   gem "rspec-rails"
   gem "factory_girl_rails"
 end
@@ -76,5 +77,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "cucumber-rails", require: false
+  gem "database_cleaner"
 end
 
