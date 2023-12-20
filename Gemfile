@@ -46,6 +46,8 @@ gem "bootstrap-sass"
 
 gem "simple_form"
 
+gem "redcarpet"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
